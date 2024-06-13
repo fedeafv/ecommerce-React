@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <ItemListContainer greeting="Hola Como estas?" />
+      <ItemListContainer greeting="Ecommerce de arbitros" />
     </div>
   );
 }

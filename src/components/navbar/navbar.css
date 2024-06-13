@@ -1,6 +1,18 @@
+* {
+  font-family: "Open Sans", "Times New Roman", Times, serif;
+}
 .navbarContainer {
-  background-color: peru;
+  background-color: #535fe6;
   display: flex;
   width: 100%;
   justify-content: space-between;
+  color: #ffffff;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+}
+ul li {
+  list-style: none;
 }
