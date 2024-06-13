@@ -7,11 +7,15 @@
   width: 100%;
   justify-content: space-between;
   color: #ffffff;
+  align-items: center;
+  min-height: 10vh;
+  padding-left: 5px;
 }
 
 ul {
   display: flex;
   gap: 20px;
+  text-align: center;
 }
 ul li {
   list-style: none;
