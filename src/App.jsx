@@ -1,11 +1,11 @@
 import { Navbar } from "./components/navbar/NavBar";
-import ItemListContainer from "./pages/ItemListContainer";
+import ItemListContainer from "./pages/itemListContainer/ItemList";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <ItemListContainer greeting="Ecommerce de arbitros" />
+      <ItemListContainer />
     </div>
   );
 }
