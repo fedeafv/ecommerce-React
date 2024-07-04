@@ -5,14 +5,28 @@
   background-color: #535fe6;
   display: flex;
   width: 100%;
+  height: 12vh;
+  padding: 15px;
   justify-content: space-between;
+  align-items: center;
   color: #ffffff;
 }
 
-ul {
+.filtro {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
-ul li {
+.tipo {
+  background-color: beige;
+  padding: 10px 20px;
+  color: #7f669d;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
   list-style: none;
 }
