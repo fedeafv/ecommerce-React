@@ -2,7 +2,8 @@ import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import { Swal } from "sweetalert2";
+import Swal from "sweetalert2";
+
 const Cart = () => {
   const { cart, clearCart, deleteProduct, getTotalPrice } =
     useContext(CartContext);
@@ -10,7 +11,7 @@ const Cart = () => {
 
   const handleDelete = (id) => {
     Swal.fire({
-      title: "Do you want to save the changes?",
+      title: "¿Seguro que querer borrar?",
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: "Borrar producto",

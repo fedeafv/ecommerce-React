@@ -5,9 +5,12 @@ import ItemDetailContainer from "./pages/itemDetailContainer/ItemDetailContainer
 import Layout from "./components/layout/Layout";
 import Checkout from "./pages/checkout/Checkout";
 import CartContextProvider from "./context/CartContext";
+import { Toaster } from "sonner";
+
 function App() {
   return (
     <BrowserRouter>
+      <Toaster richColors position="bottom-right" />
       <CartContextProvider>
         <Routes>
           <Route element={<Layout />}>

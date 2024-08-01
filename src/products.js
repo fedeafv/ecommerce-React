@@ -1,6 +1,5 @@
 export let products = [
   {
-    id: 1,
     title: "Silbato Fox 40 Classic",
     price: 20000,
     description: "Uno de los silbatos recomendados por los mejores - 115dB",
@@ -9,7 +8,6 @@ export let products = [
     category: "accesorios",
   },
   {
-    id: 2,
     title: "Silbato Fox 40 Mini",
     price: 22000,
     description: "Version mas pequeña del Fox 40 Classic - 105dB",
@@ -18,7 +16,6 @@ export let products = [
     category: "accesorios",
   },
   {
-    id: 3,
     title: "Neceser",
     price: 4000,
     description: "Neceser para guardar todas tus cosas para el partido",
@@ -27,7 +24,6 @@ export let products = [
     category: "accesorios",
   },
   {
-    id: 4,
     title: "Tarjetas",
     price: 5000,
     description: "Tarjetas hechas con impresora 3D",
@@ -36,7 +32,6 @@ export let products = [
     category: "accesorios",
   },
   {
-    id: 5,
     title: "Campera tiempo libre",
     price: 30000,
     description:
@@ -46,7 +41,6 @@ export let products = [
     category: "indumentaria",
   },
   {
-    id: 6,
     title: "Pantalon largo",
     price: 20000,
     description: "Pantalon largo para arbitro.",
@@ -55,7 +49,6 @@ export let products = [
     category: "indumentaria",
   },
   {
-    id: 7,
     title: "Bermuda tiempo libre",
     price: 15000,
     description:

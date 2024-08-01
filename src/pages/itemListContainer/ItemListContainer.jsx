@@ -1,52 +1,31 @@
 import ItemList from "./ItemList";
-import { products } from "../../products";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { PropagateLoader } from "react-spinners";
+import { db } from "../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [error, setError] = useState({});
   const { name } = useParams();
 
   useEffect(() => {
-    const getProducts = new Promise((resolve, reject) => {
-      let x = true;
-      let arrayFiltered = products.filter(
-        (product) => product.category === name
-      );
-      if (x) {
-        setTimeout(() => {
-          resolve(name ? arrayFiltered : products);
-        }, 3000);
-      } else {
-        reject({ message: "error", codigo: "404" });
-      }
-    });
+    let collectionProd = collection(db, "products");
+    let filtro = collectionProd;
 
-    getProducts
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        setError(error);
+    if (name) {
+      filtro = query(collectionProd, where("category", "==", name));
+    }
+
+    let getProducts = getDocs(filtro);
+
+    getProducts.then((res) => {
+      let arraySalvado = res.docs.map((prod) => {
+        return { ...prod.data(), id: prod.id };
       });
+      setItems(arraySalvado);
+    });
   }, [name]);
 
-  if (items.length === 0) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <PropagateLoader />
-      </div>
-    );
-  }
   return <ItemList items={items} />;
 };
 

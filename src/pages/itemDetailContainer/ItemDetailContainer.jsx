@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../products";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
+import { db } from "../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
+
 const ItemDetailContainer = () => {
   const { addToCart, getCantidadById } = useContext(CartContext);
   const { id } = useParams();
@@ -11,10 +13,12 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   let i = getCantidadById(+id);
   useEffect(() => {
-    let product = products.find((product) => product.id === +id);
-    if (product) {
-      setItem(product);
-    }
+    let collectionProd = collection(db, "products");
+    let refDoc = doc(collectionProd, id);
+    let getProd = getDoc(refDoc);
+    getProd.then((res) => {
+      setItem({ ...res.data(), id: res.id });
+    });
   }, [id]);
 
   const onAdd = (quantity) => {
