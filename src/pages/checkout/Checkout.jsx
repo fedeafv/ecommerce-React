@@ -28,7 +28,7 @@ const Checkout = () => {
     addDoc(ordenCollection, orden)
       .then((res) => {
         setIdOrden(res.id);
-        toast.success(`Gracias por tu compra, tu ticket es ${idOrden}`);
+        toast.success(`Gracias por tu compra, tu ticket es ${res.id}`);
       })
       .catch()
       .finally(() => {
